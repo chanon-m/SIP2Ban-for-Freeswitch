@@ -42,8 +42,8 @@ sub output_check_mk {
             my $status = 0;
             my $statustxt="OK";
             if($count > 0) {
-                $status = 2;
-                $statustxt="CRITICAL";
+                $status = 1;
+                $statustxt="WARNING";
             }
 
             print "$status SIP2BAN_$name attack=$count$ip_info Server is $statustxt, $datetime\n";
