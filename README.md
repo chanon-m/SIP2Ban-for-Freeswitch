@@ -29,6 +29,12 @@ only_from = 192.168.10.10
 
 ```
 
+```
+
+# service xinetd start
+# chkconfig xinetd on
+
+```
 #How to run a file
 * Download files to your remote server
 
