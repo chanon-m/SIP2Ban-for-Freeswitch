@@ -12,6 +12,14 @@ Chanon Mingsuwan
 
 Reported bugs or requested new feature can be sent to chanonm@live.com
 
+#Check_MK agent installation and configuration
+
+```
+
+# yum install xinetd check-mk-agent
+
+```
+
 #How to run a file
 * Download files to your remote server
 
