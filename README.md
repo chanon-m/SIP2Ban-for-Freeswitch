@@ -20,6 +20,15 @@ Reported bugs or requested new feature can be sent to chanonm@live.com
 
 ```
 
+```
+
+# vim /etc/xinetd.d/check-mk-agent
+
+# configure the IP address(es) of your Nagios server here:
+only_from = 192.168.10.10
+
+```
+
 #How to run a file
 * Download files to your remote server
 
