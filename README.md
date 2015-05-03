@@ -21,7 +21,7 @@ Reported bugs or requested new feature can be sent to chanonm@live.com
 
 ##Check_MK agent installation and configuration
 
-1. Install Check_MK agent in remote node
+* Install Check_MK agent in remote node
 
 ```
 
@@ -29,7 +29,7 @@ Reported bugs or requested new feature can be sent to chanonm@live.com
 
 ```
 
-2. Allow Check_MK server to access check_mk_agent
+* Allow Check_MK server to access check_mk_agent
 
 ```
 
@@ -48,7 +48,7 @@ only_from = 192.168.10.10
 
 ```
 
-3. Start the service
+* Start the service
 
 ```
 
@@ -58,6 +58,7 @@ only_from = 192.168.10.10
 ```
 
 #How to run a file
+
 * Download files to your remote server
 
 ```
