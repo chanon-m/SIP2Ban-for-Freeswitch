@@ -35,8 +35,8 @@ Reported bugs or requested new feature can be sent to chanonm@live.com
 
 # vim /etc/xinetd.d/check-mk-agent
 
-# configure the IP address(es) of your Nagios server here:
-only_from = 192.168.10.10
+  # configure the IP address(es) of your Nagios server here:
+  only_from = 192.168.10.10
 
 ```
 
@@ -46,7 +46,7 @@ only_from = 192.168.10.10
 
 # vim /etc/sysconfig/iptables
 
--A INPUT -m state --state NEW -m tcp -p tcp --dport 6556 -j ACCEPT
+  -A INPUT -m state --state NEW -m tcp -p tcp --dport 6556 -j ACCEPT
 
 ```
 
