@@ -21,11 +21,15 @@ Reported bugs or requested new feature can be sent to chanonm@live.com
 
 ##Check_MK agent installation and configuration
 
+1. Install Check_MK agent in remote node
+
 ```
 
 # yum install xinetd check-mk-agent
 
 ```
+
+2. Allow Check_MK server to access check_mk_agent
 
 ```
 
@@ -38,16 +42,21 @@ only_from = 192.168.10.10
 
 ```
 
+# vim /etc/sysconfig/iptables
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 6556 -j ACCEPT
+
+```
+
+3. Start the service
+
+```
+
 # service xinetd start
 # chkconfig xinetd on
 
 ```
 
-```
-
--A INPUT -m state --state NEW -m tcp -p tcp --dport 6556 -j ACCEPT
-
-```
 #How to run a file
 * Download files to your remote server
 
