@@ -40,6 +40,8 @@ only_from = 192.168.10.10
 
 ```
 
+* Add a new line to /etc/sysconfig/iptables
+
 ```
 
 # vim /etc/sysconfig/iptables
