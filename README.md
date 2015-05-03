@@ -40,7 +40,7 @@ only_from = 192.168.10.10
 
 ```
 
-* Add a new line to /etc/sysconfig/iptables
+* Add a new rule to /etc/sysconfig/iptables
 
 ```
 
