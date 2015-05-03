@@ -42,11 +42,33 @@ only_from = 192.168.10.10
 # chkconfig xinetd on
 
 ```
+
+```
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 6556 -j ACCEPT
+
+```
 #How to run a file
 * Download files to your remote server
 
 ```
 
 # git clone https://github.com/chanon-m/sip2ban-for-freeswitch.git
+
+```
+
+* Copy sip2ban_mk.pl to /usr/share/check-mk-agent/local/300
+
+```
+
+# cp ./sip2ban-for-freeswitch/sip2ban_mk.pl /usr/share/check-mk-agent/local/300
+
+```
+
+* Make a file executable
+
+```
+
+# chmod 755 /usr/share/check-mk-agent/local/300/sip2ban_mk.pl
 
 ```
