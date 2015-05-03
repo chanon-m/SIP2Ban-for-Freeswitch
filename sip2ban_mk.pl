@@ -34,7 +34,7 @@ sub output_check_mk {
 
             foreach my $ip (@blockedip) {
                 if($ip ne 0) {
-                    $ip_info .= "|IP=$ip";
+                    $ip_info .= ", $ip";
                     $count++;
                 }
             }
@@ -42,16 +42,16 @@ sub output_check_mk {
             my $status = 0;
             my $statustxt="OK";
             if($count > 0) {
-                $status = 1;
-                $statustxt="WARNING";
+                $status = 2;
+                $statustxt="CRITICAL";
             }
 
-            print "$status SIP2BAN_$name attack=$count$ip_info Server is $statustxt, $datetime\n";
+            print "$status SIP2BAN_$name attack=$count; Server is $statustxt attack=$count$ip_info $datetime \n";
 
         } else {
             my $status = 0;
             my $statustxt="OK";
-            print "$status SIP2BAN_$name attack=$count Server is $statustxt, $datetime\n";
+            print "$status SIP2BAN_$name attack=$count; Server is $statustxt, $datetime \n";
         }
 
 }
