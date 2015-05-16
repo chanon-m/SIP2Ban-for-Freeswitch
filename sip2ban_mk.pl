@@ -13,14 +13,14 @@ my @auth_failure = blacklist('/var/log/freeswitch/freeswitch.log','auth failure'
 #Check RTP without registration attacks
 my @rtp_attacks = blacklist('/var/log/freeswitch/freeswitch.log','Rejected by acl',5,$times);
 
-#IP address of attackers
-my @ip_blacklist = whitelist(@auth_failure,@rtp_attacks);
-
 #Output for local check_mk
+@auth_failure = whitelist(@auth_failure);
 output_check_mk("Auth_Failure",@auth_failure);
+@rtp_attacks = whitelist(@rtp_attacks);
 output_check_mk("RTP_Attacks",@rtp_attacks);
 
 #Block the attacker
+my @ip_blacklist = (@auth_failure,@rtp_attacks);
 blacklist2iptables(@ip_blacklist) if(@ip_blacklist > 0);
 
 sub output_check_mk {
